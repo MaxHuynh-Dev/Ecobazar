@@ -8,10 +8,14 @@ const textVariants = cva(styles.text, {
       14: styles.text__14,
       16: styles.text__16,
       18: styles.text__18,
+      22: styles.text__22,
       24: styles.text__24,
       30: styles.text__30,
       48: styles.text__48,
+      60: styles.text__60,
+      20: styles.text__20,
       36: styles.text__36,
+      130: styles.text__130,
     },
 
     weight: {
@@ -51,22 +55,52 @@ const textVariants = cva(styles.text, {
   },
 });
 
-type TypoTag = 'p' | 'span' | 'div' | 'label' | 'a' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type TypoTag = 'p' | 'span' | 'div' | 'label' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-type TypoOwnProps<TAs extends TypoTag> = VariantProps<typeof textVariants> & {
-  Comp: React.ElementType<React.HTMLAttributes<TAs>>;
-  className?: string;
-  children: React.ReactNode;
-  ref?: React.Ref<
-    HTMLParagraphElement | HTMLSpanElement | HTMLDivElement | HTMLLabelElement | HTMLHeadingElement
-  >;
-};
+type TypoOwnProps = VariantProps<typeof textVariants> &
+  Omit<React.HTMLAttributes<HTMLElement>, keyof VariantProps<typeof textVariants> | 'className'> & {
+    Comp?: TypoTag;
+    size?: number;
+    weight?:
+      | 'thin'
+      | 'extralight'
+      | 'light'
+      | 'normal'
+      | 'medium'
+      | 'semibold'
+      | 'bold'
+      | 'extrabold';
+    transform?: 'uppercase' | 'lowercase' | 'capitalize';
+    font?: 'body' | 'heading';
+    color?: 'default' | 'black' | 'white' | 'blue' | 'vani' | 'darkGrey';
+    className?: string;
+    children: React.ReactNode;
+  };
 
-const Text = ({ ...props }: TypoOwnProps<TypoTag>): React.JSX.Element => {
-  const { Comp = 'p', className, children, ...restProps } = props;
+const Text = ({ ...props }: TypoOwnProps): React.JSX.Element => {
+  const {
+    Comp = 'p',
+    className,
+    children,
+    size,
+    weight,
+    transform,
+    font,
+    color,
+    ...restProps
+  } = props;
+
+  const classes: string = textVariants({
+    size,
+    weight,
+    transform,
+    font,
+    color,
+    className,
+  });
 
   return (
-    <Comp className={textVariants({ className })} {...restProps}>
+    <Comp className={classes} {...restProps}>
       {children}
     </Comp>
   );

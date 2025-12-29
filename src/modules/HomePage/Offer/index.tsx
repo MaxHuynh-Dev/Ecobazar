@@ -1,6 +1,5 @@
 import { Container } from '@Components/Container';
-import Heading from '@Components/Typo/Heading';
-import { FontWeight, TypoColor, TypoFontFamily, TypoTagHeading, TypoTransform } from '@Enums/typo';
+import Text from '@Components/Typo';
 import type React from 'react';
 
 import ItemOffer from './ItemOffer';
@@ -10,16 +9,9 @@ function Offer(): React.ReactElement {
   return (
     <div className={styles.offer}>
       <Container>
-        <Heading
-          as={TypoTagHeading.h2}
-          fontWeight={FontWeight.semiBold}
-          textTransform={TypoTransform.uppercase}
-          size={130}
-          fontFamily={TypoFontFamily.raleway}
-          color={TypoColor.vani}
-        >
+        <Text Comp={'h2'} weight="semibold" transform="uppercase" size={130} font="heading">
           we offer
-        </Heading>
+        </Text>
         <div className={styles.offer_items}>
           <ItemOffer
             title="DESIGN OF HOUSES"

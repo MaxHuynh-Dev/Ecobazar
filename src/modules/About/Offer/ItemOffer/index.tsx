@@ -1,6 +1,5 @@
 import ImagePlaceHolder from '@Components/ImagePlaceHolder';
-import Label from '@Components/Typo/Label';
-import { FontWeight, TypoColor, TypoTagLabel, TypoTransform } from '@Enums/typo';
+import Text from '@Components/Typo';
 import cn from 'classnames';
 import type React from 'react';
 
@@ -17,25 +16,18 @@ function ItemOffer({ title, image, number, className }: TItemOffer): React.React
   return (
     <div className={cn(styles.itemOffer, className)}>
       <div className={styles.itemOffer_header}>
-        <Label
-          as={TypoTagLabel.span}
-          size={60}
-          textTransform={TypoTransform.uppercase}
-          color={TypoColor.dark_grey}
-          className={styles.itemOffer_title}
-        >
+        <Text Comp={'span'} size={60} weight="semibold">
           {title}
-        </Label>
-        <Label
-          as={TypoTagLabel.span}
+        </Text>
+        <Text
+          Comp={'span'}
           size={22}
-          textTransform={TypoTransform.uppercase}
-          color={TypoColor.dark_grey}
-          fontWeight={FontWeight.semiBold}
+          transform="uppercase"
+          weight="semibold"
           className={styles.itemOffer_number}
         >
           {number}
-        </Label>
+        </Text>
       </div>
       <div className={styles.itemOffer_image}>
         <ImagePlaceHolder src={image} alt="Offer" width={1000} height={1000} />

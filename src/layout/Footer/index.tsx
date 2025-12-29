@@ -1,21 +1,9 @@
 import { Container, GridContainer } from '@Components/Container';
-import Heading from '@Components/Typo/Heading';
-import Label from '@Components/Typo/Label';
-import Paragraph from '@Components/Typo/Paragraph';
-import {
-  FontWeight,
-  TypoColor,
-  TypoFontFamily,
-  TypoTagHeading,
-  TypoTagLabel,
-  TypoTagParagraph,
-  TypoTransform,
-} from '@Enums/typo';
 import type React from 'react';
 
+import Text from '@/components/Typo';
 import styles from './footer.module.scss';
 import Form from './Form';
-
 function Footer(): React.JSX.Element {
   return (
     <div className={styles.footer}>
@@ -23,86 +11,49 @@ function Footer(): React.JSX.Element {
         <GridContainer>
           <div className={styles.footer_left}>
             <div className={styles.footer_left_top}>
-              <Heading
-                as={TypoTagHeading.h2}
-                fontWeight={FontWeight.semiBold}
-                textTransform={TypoTransform.uppercase}
-                size={130}
-                fontFamily={TypoFontFamily.raleway}
-                color={TypoColor.vani}
-              >
+              <Text Comp={'h2'} weight="semibold" transform="uppercase" size={130} font="heading">
                 CONTACTS
-              </Heading>
+              </Text>
               <div className={styles.footer_left_top_paragraph}>
-                <Paragraph
-                  as={TypoTagParagraph.p}
-                  textTransform={TypoTransform.uppercase}
-                  size={20}
-                  color={TypoColor.vani}
-                >
+                <Text Comp={'p'} size={20} transform="uppercase" weight="normal" color="vani">
                   We are ready to share with you our design vision and lead you into the exciting
                   world of creativity.
-                </Paragraph>
+                </Text>
               </div>
             </div>
             <div className={styles.footer_left_bottom}>
               <div className={styles.footer_left_bottom_item}>
-                <Label
-                  as={TypoTagLabel.label}
-                  textTransform={TypoTransform.uppercase}
-                  size={20}
-                  color={TypoColor.vani}
-                  fontWeight={FontWeight.semiBold}
-                >
+                <Text Comp={'label'} size={20} transform="uppercase" weight="semibold" color="vani">
                   Address
-                </Label>
-                <Paragraph as={TypoTagParagraph.p} size={18} color={TypoColor.vani}>
+                </Text>
+                <Text Comp={'p'} size={18} transform="uppercase" weight="normal" color="vani">
                   Address: 123 Main St, Anytown, USA
-                </Paragraph>
+                </Text>
               </div>
               <div className={styles.footer_left_bottom_item}>
-                <Label
-                  as={TypoTagLabel.label}
-                  textTransform={TypoTransform.uppercase}
-                  size={20}
-                  color={TypoColor.vani}
-                  fontWeight={FontWeight.semiBold}
-                >
+                <Text Comp={'label'} size={20} transform="uppercase" weight="semibold" color="vani">
                   email
-                </Label>
-                <Paragraph as={TypoTagParagraph.div} size={18} color={TypoColor.vani}>
+                </Text>
+                <Text Comp={'p'} size={18} transform="uppercase" weight="normal" color="vani">
                   <a href="mailto:brilini.mail.asb@gmail.com">brilini.mail.asb@gmail.com</a>
-                </Paragraph>
+                </Text>
               </div>
               <div className={styles.footer_left_bottom_item}>
-                <Label
-                  as={TypoTagLabel.label}
-                  textTransform={TypoTransform.uppercase}
-                  size={20}
-                  color={TypoColor.vani}
-                  fontWeight={FontWeight.semiBold}
-                >
+                <Text Comp={'label'} size={20} transform="uppercase" weight="semibold" color="vani">
                   phone
-                </Label>
-                <Paragraph as={TypoTagParagraph.div} size={18} color={TypoColor.vani}>
+                </Text>
+                <Text Comp={'p'} size={18} transform="uppercase" weight="normal" color="vani">
                   <a href="tel:+380683650360">+38 068 365 03 60</a>
                   <a href="tel:+380662304412">+38 066 230 44 12</a>
-                </Paragraph>
+                </Text>
               </div>
             </div>
           </div>
           <div className={styles.footer_right}>
             <div className={styles.footer_right_inner}>
-              <Heading
-                as={TypoTagHeading.h2}
-                fontWeight={FontWeight.semiBold}
-                textTransform={TypoTransform.uppercase}
-                size={60}
-                fontFamily={TypoFontFamily.raleway}
-                color={TypoColor.vani}
-              >
+              <Text Comp={'h2'} weight="semibold" transform="uppercase" size={60} font="heading">
                 Let’s talk about your project!
-              </Heading>
+              </Text>
               <Form />
             </div>
           </div>

@@ -2,20 +2,11 @@
 
 import { Container } from '@Components/Container';
 import SvgInsert from '@Components/SvgInsert';
-import Heading from '@Components/Typo/Heading';
-import Label from '@Components/Typo/Label';
-import {
-  FontWeight,
-  TypoColor,
-  TypoFontFamily,
-  TypoTagHeading,
-  TypoTagLabel,
-  TypoTransform,
-} from '@Enums/typo';
 import type { EmblaCarouselType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import type React from 'react';
 
+import Text from '@/components/Typo';
 import styles from './projects.module.scss';
 import Slide from './Slide';
 import { usePrevNextButtons } from './usePrevNextButtons';
@@ -31,27 +22,19 @@ function Projects(): React.ReactElement {
     <div className={styles.projects}>
       <Container>
         <div className={styles.projects_header}>
-          <Heading
-            as={TypoTagHeading.h2}
-            fontWeight={FontWeight.semiBold}
-            textTransform={TypoTransform.uppercase}
-            size={130}
-            fontFamily={TypoFontFamily.raleway}
-            color={TypoColor.vani}
-          >
+          <Text Comp={'h2'} weight="semibold" transform="uppercase" size={130} font="heading">
             projects
-          </Heading>
+          </Text>
           <div className={styles.projects_header_number}>
-            <Label
-              as={TypoTagLabel.span}
+            <Text
+              Comp={'span'}
               size={60}
-              fontWeight={FontWeight.semiBold}
-              textTransform={TypoTransform.uppercase}
-              color={TypoColor.vani}
+              weight="semibold"
+              transform="uppercase"
               className={styles.projects_header_number_label}
             >
               1/6
-            </Label>
+            </Text>
             <div className={styles.projects_arrows}>
               <button
                 type="button"

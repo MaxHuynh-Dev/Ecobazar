@@ -1,12 +1,9 @@
+import Text from '@/components/Typo';
 import { Container } from '@Components/Container';
 import ImagePlaceHolder from '@Components/ImagePlaceHolder';
 import SvgInsert from '@Components/SvgInsert';
-import Label from '@Components/Typo/Label';
-import Paragraph from '@Components/Typo/Paragraph';
-import { TypoColor, TypoTagLabel, TypoTagParagraph, TypoTransform } from '@Enums/typo';
 import type { EmblaCarouselType } from 'embla-carousel';
 import type React from 'react';
-
 import styles from './slide.module.scss';
 
 const PROJECTS = [
@@ -78,27 +75,23 @@ function Slide({ emblaRef }: { emblaRef: EmblaCarouselType }): React.ReactElemen
                   />
                 </div>
                 <div className={styles.slider_item_content}>
-                  <Label
-                    as={TypoTagLabel.label}
+                  <Text
+                    Comp={'label'}
                     size={60}
-                    textTransform={TypoTransform.uppercase}
-                    color={TypoColor.vani}
+                    transform="uppercase"
+                    weight="semibold"
+                    color="vani"
                   >
-                    269 HOUSE
-                  </Label>
+                    {project.title}
+                  </Text>
                   <div className={styles.slider_item_content_icon}>
                     <SvgInsert src="/icons/arrow-btn.svg" width={51} height={50} />
                   </div>
                 </div>
                 <div className={styles.slider_item_tag}>
-                  <Paragraph
-                    as={TypoTagParagraph.p}
-                    size={20}
-                    textTransform={TypoTransform.uppercase}
-                    color={TypoColor.vani}
-                  >
-                    interior Design
-                  </Paragraph>
+                  <Text Comp={'p'} size={20} transform="uppercase" weight="normal" color="vani">
+                    {project.tag}
+                  </Text>
                 </div>
               </div>
             ))}

@@ -1,17 +1,8 @@
 import PrimaryButton from '@Components/Buttons/PrimaryButton';
 import { GridContainer } from '@Components/Container';
-import Heading from '@Components/Typo/Heading';
-import Paragraph from '@Components/Typo/Paragraph';
-import {
-  FontWeight,
-  TypoColor,
-  TypoFontFamily,
-  TypoTagHeading,
-  TypoTagParagraph,
-  TypoTransform,
-} from '@Enums/typo';
 import type React from 'react';
 
+import Text from '@/components/Typo';
 import styles from './gallery.module.scss';
 import Slide from './Slide';
 
@@ -28,28 +19,16 @@ function Gallery(): React.ReactElement {
     <div className={styles.gallery}>
       <GridContainer>
         <div className={styles.gallery_left}>
-          <Heading
-            as={TypoTagHeading.h2}
-            fontWeight={FontWeight.semiBold}
-            textTransform={TypoTransform.uppercase}
-            size={130}
-            fontFamily={TypoFontFamily.raleway}
-            color={TypoColor.vani}
-          >
+          <Text Comp={'h2'} weight="semibold" transform="uppercase" size={130} font="heading">
             GALLERY
-          </Heading>
+          </Text>
           <div className={styles.gallery_left_bottom}>
-            <Paragraph
-              as={TypoTagParagraph.p}
-              textTransform={TypoTransform.uppercase}
-              size={20}
-              color={TypoColor.vani}
-            >
+            <Text Comp={'p'} size={20} transform="uppercase" weight="normal">
               We are constantly growing, learning, and improving and our partners are steadily
               increasing. 286 projects is a sizable number, but we always strive to be better, more
               relevant, more determined, and more successful than yesterday. We are not going to
               stop.
-            </Paragraph>
+            </Text>
             <PrimaryButton text="Explore our work" />
           </div>
         </div>

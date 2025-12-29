@@ -1,9 +1,8 @@
 import SvgInsert from '@Components/SvgInsert';
-import Label from '@Components/Typo/Label';
-import { FontWeight, TypoColor, TypoTagLabel, TypoTransform } from '@Enums/typo';
 import cn from 'classnames';
 import type React from 'react';
 
+import Text from '@/components/Typo';
 import s from './styles.module.scss';
 
 interface TPrimaryButton {
@@ -24,16 +23,15 @@ export default function PrimaryButton({ ...props }: TPrimaryButton): React.JSX.E
   return (
     <button type="button" className={primaryButtonClassNames} onClick={onClick}>
       <div className={s.primaryButton_text}>
-        <Label
-          color={TypoColor.black}
+        <Text
+          Comp={'label'}
           size={22}
-          fontWeight={FontWeight.semiBold}
-          textTransform={TypoTransform.uppercase}
-          as={TypoTagLabel.label}
+          transform="uppercase"
+          weight="semibold"
           className={s.primaryButton_text}
         >
           {text}
-        </Label>
+        </Text>
       </div>
 
       <div className={s.primaryButton_icon}>

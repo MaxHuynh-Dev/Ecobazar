@@ -1,6 +1,7 @@
 import { Container } from '@/components/Container';
 import Text from '@Components/Typo';
 import { ROUTER } from '@Constants/router';
+import { PhoneCall } from 'lucide-react';
 import Link from 'next/link';
 import type React from 'react';
 import styles from './menu.module.scss';
@@ -20,6 +21,13 @@ function Menu(): React.ReactElement {
             </li>
           ))}
         </ul>
+
+        <Link href="tel:+1234567890" className={styles.menu_phone}>
+          <PhoneCall color="var(--color-white)" />
+          <Text size={14} weight="medium" color="white">
+            (219) 555-0114
+          </Text>
+        </Link>
       </Container>
     </div>
   );

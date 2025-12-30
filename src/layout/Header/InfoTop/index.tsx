@@ -19,6 +19,8 @@ function InfoTop(): React.ReactElement {
             </Text>
           </div>
           <div className={styles.infoTop_container_right}>
+            Eng
+            <hr className={styles.infoTop_container_right_hr} />
             <div className={styles.infoTop_container_right_links}>
               <Link href={SLUG.LOGIN}>
                 <Text size={12} color="gray6">

@@ -12,12 +12,18 @@
     &_right {
       display: flex;
       align-items: center;
-      gap: rem(8px);
+      gap: rem(20px);
       &_links {
         display: flex;
         align-items: center;
         gap: rem(4px);
         color: var(--color-gray-6);
+      }
+      &_hr {
+        width: rem(1px);
+        height: rem(15px);
+        flex-shrink: 0;
+        background-color: var(--color-gray-1);
       }
     }
   }

@@ -5,9 +5,8 @@
 
   --dark: #000000;
   --black: #000000;
-  --bg-background: #111111;
+  --bg-background: var(--color-white);
 
-  /* --- Brand Colors (Chính xác từ ảnh) --- */
   --color-soft-primary: #84d187;
   --color-primary: #00b207;
   --color-hard-primary: #2c742f;

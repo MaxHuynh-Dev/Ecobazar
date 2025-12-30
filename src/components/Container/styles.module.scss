@@ -8,8 +8,9 @@
     padding-right: rem(32px);
   }
   @include laptop {
-    padding-left: rem(50px);
-    padding-right: rem(50px);
+    // padding-left: rem(50px);
+    // padding-right: rem(50px);
+    max-width: rem(1320px);
   }
 
   &_grid {

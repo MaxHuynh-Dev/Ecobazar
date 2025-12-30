@@ -9,7 +9,7 @@ import s from './header.module.scss';
 
 function Header(): React.ReactElement {
   return (
-    <div className={s.header}>
+    <header className={s.header}>
       <Container>
         <div className={s.header_container}>
           <Link href="/" className={s.header_logo}>
@@ -28,7 +28,7 @@ function Header(): React.ReactElement {
           </ul>
         </div>
       </Container>
-    </div>
+    </header>
   );
 }
 

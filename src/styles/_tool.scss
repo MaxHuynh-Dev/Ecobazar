@@ -1,4 +1,4 @@
-@use "sass:math" as math;
+@use 'sass:math' as math;
 
 @function rem($px, $base: 10px) {
   @return math.div($px, $base) * 1rem;
@@ -12,7 +12,7 @@
   @return math.div($px, $base) * 100vh;
 }
 
-@function vw($px, $base: 1600px) {
+@function vw($px, $base: 1920px) {
   @return math.div($px, $base) * 100vw;
 }
 

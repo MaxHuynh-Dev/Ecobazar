@@ -34,24 +34,43 @@ const textVariants = cva(styles.text, {
       capitalize: styles.transform__capitalize,
     },
     font: {
-      body: styles.font__inter,
-      heading: styles.font__raleway,
+      poppins: styles.font__poppins,
     },
 
     color: {
-      default: styles.text__white,
-      black: styles.text__black,
-      white: styles.text__white,
-      blue: styles.text__blue,
-      vani: styles.text__vani,
-      darkGrey: styles.text__darkGrey,
+      white: styles.color__white,
+      softPrimary: styles.color__softPrimary,
+      primary: styles.color__primary,
+      hardPrimary: styles.color__hardPrimary,
+      warning: styles.color__warning,
+      danger: styles.color__danger,
+      gray9: styles.color__gray9,
+      gray8: styles.color__gray8,
+      gray7: styles.color__gray7,
+      gray6: styles.color__gray6,
+      gray5: styles.color__gray5,
+      gray4: styles.color__gray4,
+      gray3: styles.color__gray3,
+      gray2: styles.color__gray2,
+      gray1: styles.color__gray1,
+      gray0_5: styles.color__gray0_5,
+      greenGray9: styles.color__greenGray9,
+      greenGray8: styles.color__greenGray8,
+      greenGray7: styles.color__greenGray7,
+      greenGray6: styles.color__greenGray6,
+      greenGray5: styles.color__greenGray5,
+      greenGray4: styles.color__greenGray4,
+      greenGray3: styles.color__greenGray3,
+      greenGray2: styles.color__greenGray2,
+      greenGray1: styles.color__greenGray1,
+      greenGray0_5: styles.color__greenGray0_5,
     },
   },
   defaultVariants: {
     size: 16,
     weight: 'normal',
-    color: 'default',
-    font: 'body',
+    color: 'greenGray9',
+    font: 'poppins',
   },
 });
 
@@ -71,8 +90,34 @@ type TypoOwnProps = VariantProps<typeof textVariants> &
       | 'bold'
       | 'extrabold';
     transform?: 'uppercase' | 'lowercase' | 'capitalize';
-    font?: 'body' | 'heading';
-    color?: 'default' | 'black' | 'white' | 'blue' | 'vani' | 'darkGrey';
+    font?: 'poppins';
+    color?:
+      | 'white'
+      | 'softPrimary'
+      | 'primary'
+      | 'hardPrimary'
+      | 'warning'
+      | 'danger'
+      | 'gray9'
+      | 'gray8'
+      | 'gray7'
+      | 'gray6'
+      | 'gray5'
+      | 'gray4'
+      | 'gray3'
+      | 'gray2'
+      | 'gray1'
+      | 'gray0_5'
+      | 'greenGray9'
+      | 'greenGray8'
+      | 'greenGray7'
+      | 'greenGray6'
+      | 'greenGray5'
+      | 'greenGray4'
+      | 'greenGray3'
+      | 'greenGray2'
+      | 'greenGray1'
+      | 'greenGray0_5';
     className?: string;
     children: React.ReactNode;
   };

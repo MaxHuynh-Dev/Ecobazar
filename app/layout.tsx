@@ -1,6 +1,6 @@
 import '@Styles/app.scss';
 
-import { inter, raleway } from '@Constants/fonts';
+import { poppins } from '@Constants/fonts';
 import MainLayout from '@Layout/MainLayout';
 import { uiHelper } from '@Utils/uiHelper';
 import type { Metadata } from 'next';
@@ -30,7 +30,7 @@ export default function RootLayout({
           <Script src="https://unpkg.com/react-scan/dist/auto.global.js"></Script>
         )}
       </head>
-      <body className={`${inter.variable} ${raleway.variable}`}>
+      <body className={poppins.variable}>
         <MainLayout>{children}</MainLayout>
       </body>
     </html>

@@ -1,13 +1,39 @@
-@use "tool" as *;
+@use 'tool' as *;
 
 :root {
   --spacing-section: 16rem;
 
-  --white: #ffffff;
   --dark: #000000;
   --black: #000000;
-  --blue: #0000ff;
-  --vani: #fff8f8;
-  --dark-grey: #292929;
   --bg-background: #111111;
+
+  /* --- Brand Colors (Chính xác từ ảnh) --- */
+  --color-soft-primary: #84d187;
+  --color-primary: #00b207;
+  --color-hard-primary: #2c742f;
+  --color-warning: #ff8a00;
+  --color-danger: #ea4b48;
+  --color-white: #ffffff;
+
+  --color-gray-9: #1a1a1a;
+  --color-gray-8: #333333;
+  --color-gray-7: #4d4d4d;
+  --color-gray-6: #666666;
+  --color-gray-5: #808080;
+  --color-gray-4: #999999;
+  --color-gray-3: #b3b3b3;
+  --color-gray-2: #cccccc;
+  --color-gray-1: #e6e6e6;
+  --color-gray-0-5: #f2f2f2;
+
+  --color-green-gray-9: #0b2110;
+  --color-green-gray-8: #16331c;
+  --color-green-gray-7: #224629;
+  --color-green-gray-6: #315c39;
+  --color-green-gray-5: #45704e;
+  --color-green-gray-4: #5d8566;
+  --color-green-gray-3: #7a9c82;
+  --color-green-gray-2: #9cb5a2;
+  --color-green-gray-1: #c4d6c9;
+  --color-green-gray-0-5: #e6f0e9;
 }

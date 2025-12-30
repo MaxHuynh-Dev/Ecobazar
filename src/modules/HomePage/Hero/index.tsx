@@ -21,7 +21,6 @@ function Hero(): React.ReactElement {
           <Text
             Comp={'h1'}
             size={130}
-            font="heading"
             weight="semibold"
             transform="uppercase"
             className={classNames(styles.hero_heading)}

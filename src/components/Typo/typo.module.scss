@@ -83,33 +83,89 @@
 }
 
 // =============== Text color ==============
-.text__black {
-  color: var(--black);
+.color__white {
+  color: var(--color-white);
 }
-
-.text__white {
-  color: var(--white);
+.color__softPrimary {
+  color: var(--color-soft-primary);
 }
-
-.text__blue {
-  color: var(--blue);
+.color__primary {
+  color: var(--color-primary);
 }
-
-.text__vani {
-  color: var(--vani);
+.color__hardPrimary {
+  color: var(--color-hard-primary);
 }
-
-.text__darkGrey {
-  color: var(--dark-grey);
+.color__warning {
+  color: var(--color-warning);
+}
+.color__danger {
+  color: var(--color-danger);
+}
+.color__gray9 {
+  color: var(--color-gray-9);
+}
+.color__gray8 {
+  color: var(--color-gray-8);
+}
+.color__gray7 {
+  color: var(--color-gray-7);
+}
+.color__gray6 {
+  color: var(--color-gray-6);
+}
+.color__gray5 {
+  color: var(--color-gray-5);
+}
+.color__gray4 {
+  color: var(--color-gray-4);
+}
+.color__gray3 {
+  color: var(--color-gray-3);
+}
+.color__gray2 {
+  color: var(--color-gray-2);
+}
+.color__gray1 {
+  color: var(--color-gray-1);
+}
+.color__gray0_5 {
+  color: var(--color-gray-0-5);
+}
+.color__greenGray9 {
+  color: var(--color-green-gray-9);
+}
+.color__greenGray8 {
+  color: var(--color-green-gray-8);
+}
+.color__greenGray7 {
+  color: var(--color-green-gray-7);
+}
+.color__greenGray6 {
+  color: var(--color-green-gray-6);
+}
+.color__greenGray5 {
+  color: var(--color-green-gray-5);
+}
+.color__greenGray4 {
+  color: var(--color-green-gray-4);
+}
+.color__greenGray3 {
+  color: var(--color-green-gray-3);
+}
+.color__greenGray2 {
+  color: var(--color-green-gray-2);
+}
+.color__greenGray1 {
+  color: var(--color-green-gray-1);
+}
+.color__greenGray0_5 {
+  color: var(--color-green-gray-0-5);
 }
 
 // =============== Font family ==============
 .font {
-  &__inter {
-    font-family: var(--font-inter);
-  }
-  &__raleway {
-    font-family: var(--font-raleway);
+  &__poppins {
+    font-family: var(--font-poppins);
   }
 }
 

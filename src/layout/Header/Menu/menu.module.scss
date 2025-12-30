@@ -1,6 +1,7 @@
 .menu {
   padding: rem(16px) 0;
   background-color: var(--color-gray-8);
+  border-top: 1px solid #e5e5e5;
   &_container {
     display: flex;
     justify-content: space-between;
@@ -14,5 +15,15 @@
     display: flex;
     align-items: center;
     gap: rem(8px);
+  }
+  &[data-variant='light'] {
+    background-color: var(--color-white);
+    & .menu_list_item {
+      color: var(--color-gray-6);
+    }
+
+    & .menu_phone {
+      color: var(--color-gray-9);
+    }
   }
 }

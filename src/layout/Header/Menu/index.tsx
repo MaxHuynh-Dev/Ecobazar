@@ -6,15 +6,25 @@ import Link from 'next/link';
 import type React from 'react';
 import styles from './menu.module.scss';
 
-function Menu(): React.ReactElement {
+interface MenuProps {
+  variant?: 'dark' | 'light';
+}
+
+function Menu({ variant = 'dark' }: MenuProps): React.ReactElement {
   return (
-    <div className={styles.menu}>
+    <div className={styles.menu} data-variant={variant}>
       <Container className={styles.menu_container}>
         <ul className={styles.menu_list}>
           {ROUTER.map((item) => (
             <li key={item.href}>
               <Link href={item.href}>
-                <Text size={14} transform="capitalize" weight="medium" color="gray4">
+                <Text
+                  size={14}
+                  transform="capitalize"
+                  weight="medium"
+                  color="gray4"
+                  className={styles.menu_list_item}
+                >
                   {item.label}
                 </Text>
               </Link>
@@ -23,8 +33,8 @@ function Menu(): React.ReactElement {
         </ul>
 
         <Link href="tel:+1234567890" className={styles.menu_phone}>
-          <PhoneCall color="var(--color-white)" />
-          <Text size={14} weight="medium" color="white">
+          <PhoneCall color={variant === 'dark' ? 'var(--color-white)' : 'var(--color-gray-9)'} />
+          <Text size={14} weight="medium" color={variant === 'dark' ? 'white' : 'gray9'}>
             (219) 555-0114
           </Text>
         </Link>

@@ -1,3 +1,4 @@
+'use client';
 import type React from 'react';
 
 import { Container } from '@/components/Container';
@@ -5,9 +6,14 @@ import Text from '@/components/Typo';
 import { SLUG } from '@Constants/router';
 import { MapPin } from 'lucide-react';
 import Link from 'next/link';
+import DropdownTopHeader from '../components/DropdownTopHeader';
 import styles from './infoTop.module.scss';
 
 function InfoTop(): React.ReactElement {
+  function handleValueChange(value: string) {
+    console.log(value);
+  }
+
   return (
     <div className={styles.infoTop}>
       <Container>
@@ -19,7 +25,22 @@ function InfoTop(): React.ReactElement {
             </Text>
           </div>
           <div className={styles.infoTop_container_right}>
-            Eng
+            <DropdownTopHeader
+              defaultValue="EN"
+              options={[
+                { label: 'EN', value: 'EN' },
+                { label: 'VN', value: 'VN' },
+              ]}
+              handleValueChange={handleValueChange}
+            />
+            <DropdownTopHeader
+              defaultValue="USD"
+              options={[
+                { label: 'USD', value: 'USD' },
+                { label: 'VND', value: 'VND' },
+              ]}
+              handleValueChange={handleValueChange}
+            />
             <hr className={styles.infoTop_container_right_hr} />
             <div className={styles.infoTop_container_right_links}>
               <Link href={SLUG.LOGIN}>

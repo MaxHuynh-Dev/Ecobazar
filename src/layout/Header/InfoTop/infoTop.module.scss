@@ -9,5 +9,16 @@
       align-items: center;
       gap: rem(8px);
     }
+    &_right {
+      display: flex;
+      align-items: center;
+      gap: rem(8px);
+      &_links {
+        display: flex;
+        align-items: center;
+        gap: rem(4px);
+        color: var(--color-gray-6);
+      }
+    }
   }
 }

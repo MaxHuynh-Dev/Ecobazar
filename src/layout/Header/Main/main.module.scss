@@ -17,3 +17,40 @@
     }
   }
 }
+.main_btn {
+  display: flex;
+  align-items: center;
+  gap: rem(16px);
+  &_divider {
+    width: 1px;
+    height: rem(24px);
+    background-color: #ccc;
+  }
+}
+
+.main_cart {
+  display: flex;
+  align-items: center;
+  gap: rem(16px);
+  &_count {
+    width: rem(18px);
+    height: rem(18px);
+    background-color: var(--color-hard-primary);
+    border-radius: 50%;
+    position: absolute;
+    top: rem(-7px);
+    right: rem(-7px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+  }
+  &_icon {
+    position: relative;
+  }
+  &_icon_text {
+    display: flex;
+    flex-flow: column;
+    gap: rem(7px);
+  }
+}

@@ -4,6 +4,8 @@ import styles from './typo.module.scss';
 const textVariants = cva(styles.text, {
   variants: {
     size: {
+      10: styles.text__10,
+      11: styles.text__11,
       12: styles.text__12,
       14: styles.text__14,
       16: styles.text__16,

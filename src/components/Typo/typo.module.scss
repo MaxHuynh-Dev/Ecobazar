@@ -1,6 +1,14 @@
 .text {
   font-style: normal;
 
+  &__10 {
+    font-size: rem(10px);
+    line-height: 1em;
+  }
+  &__11 {
+    font-size: rem(11px);
+    line-height: 1.2em;
+  }
   &__12 {
     font-size: rem(12px);
     line-height: 1.3em;

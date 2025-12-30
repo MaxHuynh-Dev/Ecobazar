@@ -7,6 +7,7 @@ export const SLUG = {
   CONTACT: '/contact',
   LOGIN: '/login',
   REGISTER: '/register',
+  LIKED: '/liked',
 };
 
 export const ROUTER = [

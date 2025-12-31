@@ -1,5 +1,6 @@
 'use client';
 
+import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Separator from '@/components/Separator';
 import Text from '@/components/Typo';
 import { signal, useSignalEffect } from '@preact/signals-react';
@@ -41,12 +42,53 @@ function CartDrawer(): React.ReactElement {
             />
           </div>
         </div>
-        <div className={styles.cartDrawer_content_body}>
-          <CartItem />
-          <Separator />
-          <CartItem />
-          <Separator />
-          <CartItem />
+        <div className={styles.cartDrawer_content_inner}>
+          <div
+            className={styles.cartDrawer_content_body}
+            data-lenis-prevent="true"
+            data-lenis-prevent-scroll="true"
+          >
+            <div className={styles.cartDrawer_content_body_items}>
+              <CartItem />
+              <Separator />
+              <CartItem />
+              <Separator />
+              <CartItem />
+              <Separator />
+              <CartItem />
+              <Separator />
+              <CartItem />
+              <Separator />
+              <CartItem />
+              <Separator />
+              <CartItem />
+              <Separator />
+              <CartItem />
+              <Separator />
+              <CartItem />
+              <Separator />
+              <CartItem />
+              <Separator />
+              <CartItem />
+              <Separator />
+              <CartItem />
+            </div>
+          </div>
+          <div className={styles.cartDrawer_content_footer}>
+            <div className={styles.cartDrawer_content_footer_total}>
+              <Text size={16} color="gray9">
+                Total:
+              </Text>
+              <Text size={16} weight="medium" color="gray9">
+                $100.00
+              </Text>
+            </div>
+
+            <div className={styles.cartDrawer_content_footer_buttons}>
+              <PrimaryButton text="Checkout" />
+              <PrimaryButton text="Checkout" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

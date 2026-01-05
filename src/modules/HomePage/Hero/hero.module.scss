@@ -12,6 +12,16 @@
   &_mainContent {
     grid-column: span 8;
     grid-row: span 2;
+    position: relative;
+    &_content {
+      position: absolute;
+      top: 50%;
+      left: rem(60px);
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: rem(28px);
+    }
     &_image {
       width: 100%;
       height: rem(600px);
@@ -28,10 +38,12 @@
   &_secondaryContent {
     grid-column: span 4;
     grid-row: span 1;
+    position: relative;
   }
   &_tertiaryContent {
     grid-column: span 4;
     grid-row: span 1;
+    position: relative;
   }
 
   &_smallImage {

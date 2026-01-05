@@ -24,6 +24,15 @@
       &_description {
         border-left: 1px solid var(--color-soft-primary);
         padding-left: rem(12px);
+        display: flex;
+        flex-direction: column;
+        gap: rem(8px);
+        &_discount {
+          background-color: var(--color-warning);
+          display: inline-block;
+          padding: rem(4px) rem(12px);
+          border-radius: rem(5px);
+        }
       }
     }
     &_image {

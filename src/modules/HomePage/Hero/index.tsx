@@ -27,7 +27,12 @@ function Hero(): React.ReactElement {
                 Fresh & Healthy <br /> Organic Food
               </Text>
               <div className={styles.hero_mainContent_content_description}>
-                <div className=""></div>
+                <Text Comp="p" size={20} weight="semibold" transform="capitalize" color="white">
+                  Sale up to{' '}
+                  <span className={styles.hero_mainContent_content_description_discount}>
+                    30% OFF
+                  </span>
+                </Text>
                 <Text
                   Comp="p"
                   size={14}

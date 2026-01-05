@@ -26,6 +26,19 @@ function Hero(): React.ReactElement {
               <Text Comp="h1" size={48} weight="semibold" transform="capitalize" color="white">
                 Fresh & Healthy <br /> Organic Food
               </Text>
+              <div className={styles.hero_mainContent_content_description}>
+                <div className=""></div>
+                <Text
+                  Comp="p"
+                  size={14}
+                  weight="normal"
+                  transform="capitalize"
+                  color="white"
+                  style={{ opacity: 0.8 }}
+                >
+                  Free shipping on all your order.
+                </Text>
+              </div>
             </div>
           </div>
           <div className={styles.hero_secondaryContent}>

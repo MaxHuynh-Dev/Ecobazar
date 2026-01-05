@@ -4,15 +4,16 @@ import Animate from '@Layout/Animate';
 import Header from '@Layout/Header';
 import type { PropsWithChildren } from 'react';
 import React from 'react';
+import styles from './mainLayout.module.scss';
 
 export default function MainLayout({ children }: PropsWithChildren): React.ReactElement {
   return (
-    <React.Fragment>
+    <main className={styles.mainLayout}>
       <Header />
       <LenisScroll>
         <Animate>{children}</Animate>
       </LenisScroll>
       <GridDebug />
-    </React.Fragment>
+    </main>
   );
 }

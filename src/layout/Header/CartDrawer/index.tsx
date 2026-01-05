@@ -85,8 +85,8 @@ function CartDrawer(): React.ReactElement {
             </div>
 
             <div className={styles.cartDrawer_content_footer_buttons}>
-              <PrimaryButton text="Checkout" />
-              <PrimaryButton text="Checkout" />
+              <PrimaryButton text="Checkout" variant="fill" size="large" />
+              <PrimaryButton text="Go To Cart" variant="ghost" size="large" />
             </div>
           </div>
         </div>

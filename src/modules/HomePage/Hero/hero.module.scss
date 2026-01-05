@@ -1,2 +1,49 @@
 .hero {
+  margin-top: rem(24px);
+  &_grid {
+    gap: rem(16px);
+    @include tablet {
+      gap: rem(20px);
+    }
+    @include laptop {
+      gap: rem(24px);
+    }
+  }
+  &_mainContent {
+    grid-column: span 8;
+    grid-row: span 2;
+    &_image {
+      width: 100%;
+      height: rem(600px);
+      border-radius: rem(10px);
+      overflow: hidden;
+      aspect-ratio: 872 / 600;
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  &_secondaryContent {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+  &_tertiaryContent {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+
+  &_smallImage {
+    width: 100%;
+    height: 100%;
+    border-radius: rem(10px);
+    overflow: hidden;
+    aspect-ratio: 423 / 288;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }

@@ -1,4 +1,107 @@
+@use '@Styles/tool' as *;
+
 .cta {
   padding: rem(40px) 0;
   background-color: #f7f7f7;
+
+  &_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(40px);
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4px);
+    max-width: rem(448px);
+
+    &_description {
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+  }
+
+  &_form {
+    flex: 1;
+    max-width: rem(492px);
+
+    &_inputWrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    &_input {
+      width: 100%;
+      padding: rem(14px) rem(24px);
+      padding-right: rem(140px);
+      border: 1px solid var(--color-gray-1);
+      border-radius: rem(46px);
+      font-family: 'Poppins', sans-serif;
+      font-size: rem(16px);
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--color-gray-9);
+      background-color: var(--color-white);
+      outline: none;
+      transition: border-color 0.2s ease;
+
+      &::placeholder {
+        color: var(--color-gray-5);
+      }
+
+      &:focus {
+        border-color: var(--color-primary);
+      }
+    }
+
+    &_button {
+      position: absolute;
+      right: 0;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border: none;
+      border-radius: rem(43px);
+      padding: rem(16px) rem(40px);
+      font-family: 'Poppins', sans-serif;
+      font-size: rem(16px);
+      font-weight: 600;
+      line-height: rem(20px);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: var(--color-hard-primary);
+      }
+    }
+  }
+
+  &_social {
+    display: flex;
+    gap: rem(8px);
+
+    &_link {
+      width: rem(40px);
+      height: rem(40px);
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      color: var(--color-white);
+
+      svg {
+        width: rem(18px);
+        height: rem(18px);
+      }
+
+      &:hover {
+        background-color: var(--color-hard-primary);
+        transform: translateY(rem(-2px));
+      }
+    }
+  }
 }

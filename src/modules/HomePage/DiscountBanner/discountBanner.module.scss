@@ -1,0 +1,95 @@
+@use '@Styles/tool' as *;
+
+.discountBanner {
+  padding: rem(60px) 0;
+
+  &_wrapper {
+    height: rem(358px);
+    border-radius: rem(10px);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &_bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &_content {
+    position: relative;
+    z-index: 1;
+    margin-left: auto;
+    padding-right: rem(60px);
+    display: flex;
+    flex-direction: column;
+    gap: rem(16px);
+    max-width: rem(500px);
+
+    &_header {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12px);
+    }
+
+    &_subtitle {
+      text-transform: uppercase;
+      letter-spacing: rem(2px);
+      line-height: 1;
+    }
+
+    &_title {
+      line-height: 1.2;
+
+      &_discount {
+        color: var(--color-warning);
+      }
+    }
+
+    &_description {
+      opacity: 0.7;
+      max-width: rem(441px);
+      white-space: pre-wrap;
+    }
+
+    &_btn {
+      background-color: var(--color-primary);
+      border: none;
+      border-radius: rem(43px);
+      padding: rem(16px) rem(40px);
+      display: flex;
+      align-items: center;
+      gap: rem(16px);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      align-self: flex-start;
+
+      svg {
+        width: rem(15px);
+        height: rem(13px);
+        color: var(--color-white);
+      }
+
+      &:hover {
+        background-color: var(--color-hard-primary);
+        transform: translateY(rem(-2px));
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}

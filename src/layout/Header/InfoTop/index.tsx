@@ -10,8 +10,9 @@ import DropdownTopHeader from '../components/DropdownTopHeader';
 import styles from './infoTop.module.scss';
 
 function InfoTop(): React.ReactElement {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function handleValueChange(value: string) {
-    console.log(value);
+    // TODO: Handle language/currency change
   }
 
   return (

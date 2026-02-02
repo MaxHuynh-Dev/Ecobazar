@@ -1,0 +1,149 @@
+@use '@Styles/tool' as *;
+
+.promoBanners {
+  padding: rem(60px) 0;
+
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(24px);
+  }
+}
+
+.banner {
+  height: rem(536px);
+  border-radius: rem(8px);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__blue &_bg::after {
+    background: rgba(31, 108, 181, 0.7);
+  }
+
+  &__black &_bg::after {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  &__yellow &_bg::after {
+    background: rgba(255, 193, 7, 0.7);
+  }
+
+  &_content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: rem(40px);
+
+    &_subtitle {
+      text-transform: uppercase;
+      letter-spacing: rem(3px);
+      margin-bottom: rem(12px);
+      opacity: 0.9;
+    }
+
+    &_title {
+      margin-bottom: rem(24px);
+      line-height: 1.2;
+      max-width: rem(300px);
+    }
+
+    &_price,
+    &_discount {
+      display: flex;
+      align-items: center;
+      gap: rem(8px);
+      margin-bottom: rem(24px);
+
+      &_value {
+        color: var(--color-warning);
+      }
+
+      &_badge {
+        background-color: var(--color-gray-9);
+        color: var(--color-white);
+        padding: rem(4px) rem(12px);
+        border-radius: rem(4px);
+      }
+    }
+
+    &_btn {
+      background-color: var(--color-white);
+      border: none;
+      border-radius: rem(43px);
+      padding: rem(14px) rem(32px);
+      display: flex;
+      align-items: center;
+      gap: rem(12px);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      svg {
+        width: rem(15px);
+        height: rem(13px);
+        color: var(--color-primary);
+      }
+
+      &:hover {
+        transform: translateY(rem(-2px));
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: rem(8px);
+  margin-bottom: rem(24px);
+  font-family: 'Poppins', sans-serif;
+
+  &_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(4px);
+
+    &_value {
+      width: rem(56px);
+      text-align: center;
+      white-space: pre-wrap;
+    }
+
+    &_label {
+      text-transform: uppercase;
+      letter-spacing: rem(0.36px);
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1;
+    }
+  }
+
+  &_separator {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}

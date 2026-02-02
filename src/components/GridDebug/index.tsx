@@ -14,7 +14,13 @@ const GridColumn = (): React.ReactElement => (
 );
 
 export default function GridDebug(): React.ReactElement {
-  const [isGrid, setIsGrid] = useState<boolean>(false);
+  const [isGrid, setIsGrid] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const storedValue = localStorage.getItem('isGrid');
+      return storedValue === 'true';
+    }
+    return false;
+  });
 
   const handleKeyDown: (ev: KeyboardEvent) => void = useCallback(
     (ev: KeyboardEvent) => {
@@ -28,18 +34,6 @@ export default function GridDebug(): React.ReactElement {
     },
     [isGrid]
   );
-
-  useEffect(() => {
-    const storedValue = localStorage.getItem('isGrid');
-    if (storedValue !== null) {
-      const initialIsGrid: boolean = storedValue === 'true';
-      if (initialIsGrid !== isGrid) {
-        setTimeout(() => {
-          setIsGrid(initialIsGrid);
-        }, 0);
-      }
-    }
-  }, []);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);

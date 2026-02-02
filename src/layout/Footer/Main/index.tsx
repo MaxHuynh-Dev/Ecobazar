@@ -1,11 +1,18 @@
+'use client';
+
+import { GridContainer } from '@/components/Container';
+import { FOOTER_ROUTER } from '@/constants/router';
 import Text from '@Components/Typo';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import type React from 'react';
 import styles from './main.module.scss';
 
-function Main(): React.JSX.Element {
+export default function Main(): React.JSX.Element {
+  const pathname = usePathname();
   return (
-    <div className={styles.main}>
+    <GridContainer className={styles.main}>
       <div className={styles.main_left}>
         <div className={styles.main_left_logo}>
           <Image src="/images/logo/logo-white.svg" alt="logo" width={300} height={300} />
@@ -30,9 +37,24 @@ function Main(): React.JSX.Element {
           </a>
         </div>
       </div>
-      <div className={styles.main_menu}></div>
-    </div>
+      {FOOTER_ROUTER.map((item) => (
+        <div className={styles.main_menu} key={item.label}>
+          <Text size={16} color="white" weight="medium" Comp="span">
+            {item.label}
+          </Text>
+          <ul className={styles.main_menu_list}>
+            {item.links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href}>
+                  <Text size={14} color={pathname === link.href ? 'white' : 'gray4'} Comp="span">
+                    {link.label}
+                  </Text>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </GridContainer>
   );
 }
-
-export default Main;

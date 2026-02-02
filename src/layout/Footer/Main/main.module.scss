@@ -1,5 +1,6 @@
 .main {
   &_left {
+    grid-column: span 4;
     display: flex;
     flex-direction: column;
     gap: rem(16px);
@@ -27,6 +28,17 @@
       &_text {
         margin-top: rem(-10px);
       }
+    }
+  }
+  &_menu {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+    &_list {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12px);
     }
   }
 }

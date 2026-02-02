@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import type React from 'react';
 import styles from './typo.module.scss';
+
 const textVariants = cva(styles.text, {
   variants: {
     size: {
@@ -19,24 +20,32 @@ const textVariants = cva(styles.text, {
       36: styles.text__36,
       130: styles.text__130,
     },
-
     weight: {
-      thin: styles.weight__thin,
-      extralight: styles.weight__extralight,
-      light: styles.weight__light,
-      normal: styles.weight__regular,
-      medium: styles.weight__medium,
-      semibold: styles.weight__semibold,
-      bold: styles.weight__bold,
-      extrabold: styles.weight__extrabold,
+      thin: 'font-thin',
+      extralight: 'font-extralight',
+      light: 'font-light',
+      normal: 'font-normal',
+      medium: 'font-medium',
+      semibold: 'font-semibold',
+      bold: 'font-bold',
+      extrabold: 'font-extrabold',
     },
     transform: {
-      uppercase: styles.transform__uppercase,
-      lowercase: styles.transform__lowercase,
-      capitalize: styles.transform__capitalize,
+      uppercase: 'uppercase',
+      lowercase: 'lowercase',
+      capitalize: 'capitalize',
     },
+    // style: {
+    //   italic: 'italic',
+    //   normal: 'not-italic',
+    // },
     font: {
-      poppins: styles.font__poppins,
+      poppins: 'font-(family-name:--font-poppins)',
+    },
+    align: {
+      left: 'text-left',
+      center: 'text-center',
+      right: 'text-right',
     },
 
     color: {
@@ -71,7 +80,7 @@ const textVariants = cva(styles.text, {
   defaultVariants: {
     size: 16,
     weight: 'normal',
-    color: 'greenGray9',
+    color: 'gray9',
     font: 'poppins',
   },
 });
@@ -93,6 +102,7 @@ type TypoOwnProps = VariantProps<typeof textVariants> &
       | 'extrabold';
     transform?: 'uppercase' | 'lowercase' | 'capitalize';
     font?: 'poppins';
+    align?: 'left' | 'center' | 'right';
     color?:
       | 'white'
       | 'softPrimary'
@@ -131,6 +141,7 @@ const Text = ({ ...props }: TypoOwnProps): React.JSX.Element => {
     children,
     size,
     weight,
+    // style,
     transform,
     font,
     color,
@@ -140,6 +151,7 @@ const Text = ({ ...props }: TypoOwnProps): React.JSX.Element => {
   const classes: string = textVariants({
     size,
     weight,
+    // style,
     transform,
     font,
     color,

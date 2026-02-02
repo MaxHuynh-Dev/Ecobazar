@@ -10,38 +10,32 @@ function InstagramFeed(): React.ReactElement {
   const posts = [
     {
       id: 1,
-      image:
-        'https://images.unsplash.com/photo-1592841200221-a6898f307baa?q=80&w=400&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       isHighlighted: false,
     },
     {
       id: 2,
-      image:
-        'https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=400&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       isHighlighted: true,
     },
     {
       id: 3,
-      image:
-        'https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=400&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       isHighlighted: false,
     },
     {
       id: 4,
-      image:
-        'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?q=80&w=400&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       isHighlighted: false,
     },
     {
       id: 5,
-      image:
-        'https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?q=80&w=400&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       isHighlighted: false,
     },
     {
       id: 6,
-      image:
-        'https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=400&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       isHighlighted: false,
     },
   ];

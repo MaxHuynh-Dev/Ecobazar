@@ -213,8 +213,7 @@ function PromoBanners(): React.ReactElement {
       subtitle: 'BEST DEALS',
       ctaText: 'Shop Now',
       bgColor: 'blue',
-      bgImage:
-        'https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=800&auto=format&fit=crop',
+      bgImage: '/images/hotdeal/Image-10.jpg',
       // endDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     },
     {
@@ -224,8 +223,7 @@ function PromoBanners(): React.ReactElement {
       subtitle: '85% FAT FREE',
       ctaText: 'Shop Now',
       bgColor: 'black',
-      bgImage:
-        'https://images.unsplash.com/photo-1588347818036-8f5e6e9d4ea8?q=80&w=800&auto=format&fit=crop',
+      bgImage: '/images/hotdeal/Image-10.jpg',
       price: '$79.99',
     },
     {
@@ -235,8 +233,7 @@ function PromoBanners(): React.ReactElement {
       subtitle: 'SUMMER SALE',
       ctaText: 'Shop Now',
       bgColor: 'yellow',
-      bgImage:
-        'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?q=80&w=800&auto=format&fit=crop',
+      bgImage: '/images/hotdeal/Image-10.jpg',
       discount: '64% OFF',
     },
   ];

@@ -98,8 +98,7 @@ function LatestNews(): React.ReactElement {
       category: 'Food',
       author: 'Admin',
       commentsCount: 65,
-      image:
-        'https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       slug: 'curabitur-porttitor',
     },
     {
@@ -110,8 +109,7 @@ function LatestNews(): React.ReactElement {
       category: 'Food',
       author: 'Admin',
       commentsCount: 65,
-      image:
-        'https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       slug: 'eget-lobortis',
     },
     {
@@ -122,8 +120,7 @@ function LatestNews(): React.ReactElement {
       category: 'Food',
       author: 'Admin',
       commentsCount: 65,
-      image:
-        'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       slug: 'maecenas-blandit',
     },
   ];

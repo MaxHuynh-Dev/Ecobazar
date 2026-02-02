@@ -13,7 +13,7 @@ function DiscountBanner(): React.ReactElement {
         <div className={styles.discountBanner_wrapper}>
           <div className={styles.discountBanner_bg}>
             <ImagePlaceHolder
-              src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=1600&auto=format&fit=crop"
+              src="/images/hotdeal/Image-10.jpg"
               alt="Summer Sale"
               width={1320}
               height={358}

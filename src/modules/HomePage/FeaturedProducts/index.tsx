@@ -13,8 +13,7 @@ function FeaturedProducts(): React.ReactElement {
       name: 'Green Apple',
       price: 14.99,
       oldPrice: 20.99,
-      image:
-        'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       rating: 4,
       discount: 50,
       badge: 'sale' as const,
@@ -23,32 +22,28 @@ function FeaturedProducts(): React.ReactElement {
       id: 2,
       name: 'Fresh Indian Malta',
       price: 20.0,
-      image:
-        'https://images.unsplash.com/photo-1582979512210-99b6a53386f9?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       rating: 4,
     },
     {
       id: 3,
       name: 'Chinese cabbage',
       price: 12.0,
-      image:
-        'https://images.unsplash.com/photo-1568584711271-45b2b5c0b0f5?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       rating: 4,
     },
     {
       id: 4,
       name: 'Green Lettuce',
       price: 9.0,
-      image:
-        'https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       rating: 4,
     },
     {
       id: 5,
       name: 'Eggplant',
       price: 34.0,
-      image:
-        'https://images.unsplash.com/photo-1659261200833-ec8761558af7?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       rating: 4,
     },
   ];

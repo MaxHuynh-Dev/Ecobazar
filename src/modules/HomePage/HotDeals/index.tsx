@@ -13,8 +13,7 @@ function HotDeals(): React.ReactElement {
       name: 'Green Apple',
       price: 14.99,
       oldPrice: 20.99,
-      image:
-        'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-1.jpg',
       rating: 4,
       discount: 50,
       badge: 'sale' as const,
@@ -23,56 +22,49 @@ function HotDeals(): React.ReactElement {
       id: 2,
       name: 'Fresh Indian Malta',
       price: 20.0,
-      image:
-        'https://images.unsplash.com/photo-1582979512210-99b6a53386f9?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-2.jpg',
       rating: 4,
     },
     {
       id: 3,
       name: 'Chinese cabbage',
       price: 12.0,
-      image:
-        'https://images.unsplash.com/photo-1568584711271-45b2b5c0b0f5?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-3.jpg',
       rating: 4,
     },
     {
       id: 4,
       name: 'Green Lettuce',
       price: 9.0,
-      image:
-        'https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-4.jpg',
       rating: 4,
     },
     {
       id: 5,
       name: 'Eggplant',
       price: 34.0,
-      image:
-        'https://images.unsplash.com/photo-1659261200833-ec8761558af7?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-5.jpg',
       rating: 4,
     },
     {
       id: 6,
       name: 'Big Potatoes',
       price: 20.0,
-      image:
-        'https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-6.jpg',
       rating: 4,
     },
     {
       id: 7,
       name: 'Corn',
       price: 20.0,
-      image:
-        'https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-7.jpg',
       rating: 4,
     },
     {
       id: 8,
       name: 'Fresh Cauliflower',
       price: 12.0,
-      image:
-        'https://images.unsplash.com/photo-1568584711271-45b2b5c0b0f5?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-8.jpg',
       rating: 4,
     },
     {
@@ -80,8 +72,7 @@ function HotDeals(): React.ReactElement {
       name: 'Green Capsicum',
       price: 9.0,
       oldPrice: 20.99,
-      image:
-        'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-9.jpg',
       rating: 4,
       discount: 50,
       badge: 'sale' as const,
@@ -90,8 +81,7 @@ function HotDeals(): React.ReactElement {
       id: 10,
       name: 'Green Chili',
       price: 34.0,
-      image:
-        'https://images.unsplash.com/photo-1583054065453-ab71aee87f80?q=80&w=800&auto=format&fit=crop',
+      image: '/images/hotdeal/Image-10.jpg',
       rating: 4,
     },
   ];

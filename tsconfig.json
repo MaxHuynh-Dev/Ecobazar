@@ -36,7 +36,8 @@
       "@Motions/*": ["./src/motions/*"],
       "@Store/*": ["./src/store/*"],
       "@Interactive/*": ["./src/interactive/*"],
-      "@Enums/*": ["./src/enums/*"]
+      "@Enums/*": ["./src/enums/*"],
+      "@Templates/*": ["./src/templates/*"]
     }
   },
   "include": [

@@ -1,17 +1,21 @@
 import { Container } from '@Components/Container';
-import type React from 'react';
+import React from 'react';
 
+import CTA from '@Templates/CTA';
 import Copyright from './Copyright';
 import Main from './Main';
 import styles from './footer.module.scss';
 function Footer(): React.JSX.Element {
   return (
-    <div className={styles.footer}>
-      <Container>
-        <Main />
-        <Copyright />
-      </Container>
-    </div>
+    <React.Fragment>
+      <CTA />
+      <div className={styles.footer}>
+        <Container>
+          <Main />
+          <Copyright />
+        </Container>
+      </div>
+    </React.Fragment>
   );
 }
 

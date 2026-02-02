@@ -1,0 +1,24 @@
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem(24px) 0;
+  border-top: 1px solid var(--color-gray-4);
+  margin-top: rem(60px);
+}
+
+.paymentMethods {
+  display: flex;
+  align-items: center;
+  gap: rem(8px);
+}
+
+.paymentMethods_item {
+  width: auto;
+  height: rem(32px);
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

@@ -9,13 +9,7 @@ function CartItem(): React.ReactElement {
     <div className={styles.cartItem}>
       <div className={styles.cartItem_imageContainer}>
         <div className={styles.cartItem_image}>
-          <Image
-            src="/images/orange.jpg"
-            alt="Product"
-            width={120}
-            height={100}
-            objectFit="cover"
-          />
+          <Image src="/images/orange.jpg" alt="Product" width={120} height={100} />
         </div>
         <div className={styles.cartItem_info}>
           <Text size={14} color="gray9">

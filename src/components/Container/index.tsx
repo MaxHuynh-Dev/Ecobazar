@@ -9,9 +9,9 @@ type Props = PropsWithChildren & {
 };
 
 export const Container = ({ children, className }: Props): React.JSX.Element => {
-  return <div className={cn(s.container, className)}>{children}</div>;
+  return <div className={cn('mx-auto w-full', s.container, className)}>{children}</div>;
 };
 
 export const GridContainer = ({ children, className }: Props): React.JSX.Element => {
-  return <div className={cn(s.container_grid, className)}>{children}</div>;
+  return <div className={cn('grid w-full', s.container_grid, className)}>{children}</div>;
 };

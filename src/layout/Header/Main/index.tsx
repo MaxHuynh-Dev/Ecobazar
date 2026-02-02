@@ -15,7 +15,7 @@ function Main(): React.ReactElement {
       <Container>
         <div className={styles.main_container}>
           <Link href="/" className={styles.main_logo}>
-            <SvgInsert name="logo" src="/images/Logo.svg" />
+            <SvgInsert name="logo" src="/images/logo/logo-dark.svg" />
           </Link>
           <SearchBar />
           <div className={styles.main_btn}>

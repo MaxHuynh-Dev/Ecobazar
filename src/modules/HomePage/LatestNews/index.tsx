@@ -4,7 +4,6 @@ import { Container } from '@/components/Container';
 import ImagePlaceHolder from '@/components/ImagePlaceHolder';
 import SvgInsert from '@/components/SvgInsert';
 import Text from '@/components/Typo';
-import styles from './latestNews.module.scss';
 
 interface BlogCardProp {
   id: number;
@@ -24,12 +23,18 @@ interface BlogCardItemProp {
 
 const BlogCardItem = ({ blog }: BlogCardItemProp): React.JSX.Element => {
   return (
-    <div className={styles.blogCard}>
-      <div className={styles.blogCard_imageWrapper}>
-        <div className={styles.blogCard_image}>
-          <ImagePlaceHolder src={blog.image} alt={blog.title} width={424} height={324} />
+    <div className="rounded-lg overflow-hidden bg-white shadow-md flex flex-col">
+      <div className="relative">
+        <div className="aspect-[424/324] w-full">
+          <ImagePlaceHolder
+            src={blog.image}
+            alt={blog.title}
+            width={424}
+            height={324}
+            className="w-full h-full object-cover"
+          />
         </div>
-        <div className={styles.blogCard_date}>
+        <div className="absolute top-4 left-4 flex flex-col items-center bg-white rounded-lg shadow px-3 py-2">
           <Text Comp="p" size={20} weight="medium" color="gray9">
             {blog.date}
           </Text>
@@ -38,21 +43,21 @@ const BlogCardItem = ({ blog }: BlogCardItemProp): React.JSX.Element => {
             size={12}
             weight="medium"
             color="gray5"
-            className={styles.blogCard_date_month}
+            className="uppercase tracking-wider"
           >
             {blog.month}
           </Text>
         </div>
       </div>
-      <div className={styles.blogCard_content}>
-        <div className={styles.blogCard_meta}>
-          <div className={styles.blogCard_meta_item}>
+      <div className="flex flex-col flex-1 p-6">
+        <div className="flex flex-wrap items-center gap-5 mb-5">
+          <div className="flex items-center gap-2">
             <SvgInsert src="/icons/tag.svg" width={18} height={18} />
             <Text Comp="span" size={14} weight="normal" color="gray7">
               {blog.category}
             </Text>
           </div>
-          <div className={styles.blogCard_meta_item}>
+          <div className="flex items-center gap-2">
             <SvgInsert src="/icons/user.svg" width={18} height={18} />
             <Text Comp="span" size={14} weight="normal" color="gray7">
               <Text Comp="span" size={14} weight="normal" color="gray5">
@@ -61,7 +66,7 @@ const BlogCardItem = ({ blog }: BlogCardItemProp): React.JSX.Element => {
               {blog.author}
             </Text>
           </div>
-          <div className={styles.blogCard_meta_item}>
+          <div className="flex items-center gap-2">
             <SvgInsert src="/icons/comment.svg" width={18} height={18} />
             <Text Comp="span" size={14} weight="normal" color="gray6">
               {blog.commentsCount} Comments
@@ -73,15 +78,20 @@ const BlogCardItem = ({ blog }: BlogCardItemProp): React.JSX.Element => {
           size={18}
           weight="medium"
           color="hardPrimary"
-          className={styles.blogCard_title}
+          className="mb-6 hover:underline cursor-pointer transition-colors"
         >
           {blog.title}
         </Text>
-        <button className={styles.blogCard_readMore}>
+        <button className="group flex items-center gap-2 mt-auto text-primary font-semibold">
           <Text Comp="span" size={16} weight="semibold" color="primary">
             Read More
           </Text>
-          <SvgInsert src="/icons/arrow-right-green.svg" width={15} height={13} />
+          <SvgInsert
+            src="/icons/arrow-right-green.svg"
+            width={15}
+            height={13}
+            className="group-hover:translate-x-1 transition-transform"
+          />
         </button>
       </div>
     </div>
@@ -126,18 +136,12 @@ function LatestNews(): React.ReactElement {
   ];
 
   return (
-    <div className={styles.latestNews}>
+    <div className="py-[60px] bg-gray-50">
       <Container>
-        <Text
-          Comp="h2"
-          size={32}
-          weight="semibold"
-          color="gray9"
-          className={styles.latestNews_title}
-        >
+        <Text Comp="h2" size={32} weight="semibold" color="gray9" className="text-center mb-10">
           Latest News
         </Text>
-        <div className={styles.latestNews_grid}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog: BlogCardProp) => (
             <BlogCardItem key={blog.id} blog={blog} />
           ))}

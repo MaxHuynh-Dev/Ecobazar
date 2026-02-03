@@ -7,7 +7,6 @@ import ImagePlaceHolder from '@/components/ImagePlaceHolder';
 import SvgInsert from '@/components/SvgInsert';
 import Text from '@/components/Typo';
 import classNames from 'classnames';
-import styles from './featuredProductCard.module.scss';
 
 interface FeaturedProductCardProp {
   id: number;
@@ -66,15 +65,23 @@ function FeaturedProductCard({
   const formatNumber = (num: number): string => num.toString().padStart(2, '0');
 
   return (
-    <div className={classNames(styles.featuredCard, className)}>
-      <div className={styles.featuredCard_imageWrapper}>
-        <div className={styles.featuredCard_image}>
+    <div
+      className={classNames(
+        'bg-white rounded-2xl shadow-lg flex flex-col w-full max-w-full overflow-hidden relative',
+        className
+      )}
+    >
+      {/* Image & Badges & Actions */}
+      <div className="relative">
+        <div className="w-full aspect-[525/446] rounded-t-2xl flex items-center justify-center overflow-hidden bg-gray-50">
           <ImagePlaceHolder src={image} alt={name} width={525} height={446} />
         </div>
+
+        {/* Badges */}
         {badges && badges.length > 0 && (
-          <div className={styles.featuredCard_badges}>
+          <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
             {badges.includes('sale') && discount && (
-              <div className={styles.featuredCard_badge__sale}>
+              <div className="flex items-center gap-1 bg-primary/10 text-primary-600 rounded-full px-3 py-1 text-xs font-medium">
                 <Text Comp="span" size={14} weight="normal">
                   Sale
                 </Text>
@@ -84,37 +91,60 @@ function FeaturedProductCard({
               </div>
             )}
             {badges.includes('best-sale') && (
-              <div className={styles.featuredCard_badge__bestSale}>Best Sale</div>
+              <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">
+                Best Sale
+              </div>
             )}
           </div>
         )}
-        <div className={styles.featuredCard_actions}>
-          <button className={styles.featuredCard_actions_wishlist} aria-label="Add to wishlist">
+
+        {/* Actions */}
+        <div className="absolute right-4 bottom-4 flex flex-col gap-2 z-10">
+          <button
+            className="bg-white shadow rounded-full p-2 flex items-center justify-center transition hover:bg-gray-100"
+            aria-label="Add to wishlist"
+            type="button"
+          >
             <SvgInsert src="/icons/heart.svg" width={20} height={20} />
           </button>
-          <button className={styles.featuredCard_actions_addToCart}>
+          <button
+            className="flex items-center gap-2 bg-primary px-4 py-2 rounded-full shadow text-white font-semibold text-sm hover:bg-primary-700 transition-all disabled:opacity-60 disabled:pointer-events-none"
+            type="button"
+          >
             <Text Comp="span" size={14} weight="semibold" color="white">
               Add to Cart
             </Text>
             <SvgInsert src="/icons/bag.svg" width={16} height={16} />
           </button>
-          <button className={styles.featuredCard_actions_quickView} aria-label="Quick view">
+          <button
+            className="bg-white shadow rounded-full p-2 flex items-center justify-center transition hover:bg-gray-100"
+            aria-label="Quick view"
+            type="button"
+          >
             <SvgInsert src="/icons/eye.svg" width={20} height={20} />
           </button>
         </div>
       </div>
-      <div className={styles.featuredCard_info}>
+
+      {/* Info */}
+      <div className="flex flex-col gap-2 p-6">
         <Text
           Comp="p"
           size={18}
           weight="normal"
           color="hardPrimary"
-          className={styles.featuredCard_info_name}
+          className="text-lg font-medium text-primary-700 mb-1 truncate"
         >
           {name}
         </Text>
-        <div className={styles.featuredCard_info_price}>
-          <Text Comp="span" size={24} weight="medium" color="gray9">
+        <div className="flex items-baseline gap-2">
+          <Text
+            Comp="span"
+            size={24}
+            weight="medium"
+            color="gray9"
+            className="text-2xl font-semibold text-gray-900"
+          >
             ${price.toFixed(2)}
           </Text>
           {oldPrice && (
@@ -123,14 +153,14 @@ function FeaturedProductCard({
               size={24}
               weight="normal"
               color="gray4"
-              className={styles.featuredCard_info_price_old}
+              className="text-2xl font-normal text-gray-400 line-through"
             >
               ${oldPrice.toFixed(2)}
             </Text>
           )}
         </div>
-        <div className={styles.featuredCard_info_ratingWrapper}>
-          <div className={styles.featuredCard_info_rating}>
+        <div className="flex items-center gap-2 mt-1">
+          <div className="flex items-center gap-0.5">
             {Array.from({ length: 5 }, (_, index) => (
               <SvgInsert
                 key={index}
@@ -140,104 +170,138 @@ function FeaturedProductCard({
               />
             ))}
           </div>
-          <Text Comp="span" size={12} weight="normal" color="gray5">
+          <Text
+            Comp="span"
+            size={12}
+            weight="normal"
+            color="gray5"
+            className="text-xs text-gray-400"
+          >
             ({feedbackCount} Feedback)
           </Text>
         </div>
       </div>
-      <div className={styles.featuredCard_countdown}>
-        <Text
-          Comp="p"
-          size={14}
-          weight="normal"
-          color="gray4"
-          className={styles.featuredCard_countdown_label}
-        >
-          Hurry up! Offer ends In:
-        </Text>
-        <div className={styles.featuredCard_countdown_timer}>
-          <div className={styles.featuredCard_countdown_item}>
-            <Text Comp="p" size={18} weight="medium" color="gray9">
-              {formatNumber(timeLeft.days)}
-            </Text>
-            <Text
-              Comp="p"
-              size={10}
-              weight="medium"
-              color="gray4"
-              className={styles.featuredCard_countdown_item_label}
-            >
-              DAYS
-            </Text>
-          </div>
+
+      {/* Countdown */}
+      <div className="w-full px-6 pb-6">
+        <div className="w-full bg-gray-100 rounded-xl px-4 py-3 flex flex-col items-center gap-2">
           <Text
-            Comp="span"
-            size={20}
+            Comp="p"
+            size={14}
             weight="normal"
-            color="gray5"
-            className={styles.featuredCard_countdown_separator}
+            color="gray4"
+            className="text-xs text-gray-400 mb-1"
           >
-            :
+            Hurry up! Offer ends In:
           </Text>
-          <div className={styles.featuredCard_countdown_item}>
-            <Text Comp="p" size={18} weight="medium" color="gray9">
-              {formatNumber(timeLeft.hours)}
-            </Text>
+          <div className="flex items-center gap-2">
+            <div className="flex flex-col items-center">
+              <Text
+                Comp="p"
+                size={18}
+                weight="medium"
+                color="gray9"
+                className="text-lg font-semibold text-gray-900"
+              >
+                {formatNumber(timeLeft.days)}
+              </Text>
+              <Text
+                Comp="p"
+                size={10}
+                weight="medium"
+                color="gray4"
+                className="text-[10px] font-medium text-gray-400"
+              >
+                DAYS
+              </Text>
+            </div>
             <Text
-              Comp="p"
-              size={10}
-              weight="medium"
-              color="gray4"
-              className={styles.featuredCard_countdown_item_label}
+              Comp="span"
+              size={20}
+              weight="normal"
+              color="gray5"
+              className="text-xl font-normal text-gray-400"
             >
-              HOURS
+              :
             </Text>
-          </div>
-          <Text
-            Comp="span"
-            size={20}
-            weight="normal"
-            color="gray5"
-            className={styles.featuredCard_countdown_separator}
-          >
-            :
-          </Text>
-          <div className={styles.featuredCard_countdown_item}>
-            <Text Comp="p" size={18} weight="medium" color="gray9">
-              {formatNumber(timeLeft.minutes)}
-            </Text>
+            <div className="flex flex-col items-center">
+              <Text
+                Comp="p"
+                size={18}
+                weight="medium"
+                color="gray9"
+                className="text-lg font-semibold text-gray-900"
+              >
+                {formatNumber(timeLeft.hours)}
+              </Text>
+              <Text
+                Comp="p"
+                size={10}
+                weight="medium"
+                color="gray4"
+                className="text-[10px] font-medium text-gray-400"
+              >
+                HOURS
+              </Text>
+            </div>
             <Text
-              Comp="p"
-              size={10}
-              weight="medium"
-              color="gray4"
-              className={styles.featuredCard_countdown_item_label}
+              Comp="span"
+              size={20}
+              weight="normal"
+              color="gray5"
+              className="text-xl font-normal text-gray-400"
             >
-              MINS
+              :
             </Text>
-          </div>
-          <Text
-            Comp="span"
-            size={20}
-            weight="normal"
-            color="gray5"
-            className={styles.featuredCard_countdown_separator}
-          >
-            :
-          </Text>
-          <div className={styles.featuredCard_countdown_item}>
-            <Text Comp="p" size={18} weight="medium" color="gray9">
-              {formatNumber(timeLeft.seconds)}
-            </Text>
+            <div className="flex flex-col items-center">
+              <Text
+                Comp="p"
+                size={18}
+                weight="medium"
+                color="gray9"
+                className="text-lg font-semibold text-gray-900"
+              >
+                {formatNumber(timeLeft.minutes)}
+              </Text>
+              <Text
+                Comp="p"
+                size={10}
+                weight="medium"
+                color="gray4"
+                className="text-[10px] font-medium text-gray-400"
+              >
+                MINS
+              </Text>
+            </div>
             <Text
-              Comp="p"
-              size={10}
-              weight="medium"
-              color="gray4"
-              className={styles.featuredCard_countdown_item_label}
+              Comp="span"
+              size={20}
+              weight="normal"
+              color="gray5"
+              className="text-xl font-normal text-gray-400"
             >
-              SECS
+              :
             </Text>
+            <div className="flex flex-col items-center">
+              <Text
+                Comp="p"
+                size={18}
+                weight="medium"
+                color="gray9"
+                className="text-lg font-semibold text-gray-900"
+              >
+                {formatNumber(timeLeft.seconds)}
+              </Text>
+              <Text
+                Comp="p"
+                size={10}
+                weight="medium"
+                color="gray4"
+                className="text-[10px] font-medium text-gray-400"
+              >
+                SECS
+              </Text>
+            </div>
           </div>
         </div>
       </div>

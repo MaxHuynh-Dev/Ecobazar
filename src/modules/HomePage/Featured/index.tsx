@@ -2,7 +2,6 @@ import type React from 'react';
 
 import { Container } from '@/components/Container';
 import SvgInsert from '@/components/SvgInsert';
-import styles from './featured.module.scss';
 
 interface FeatureItemProp {
   iconSrc: string;
@@ -12,13 +11,17 @@ interface FeatureItemProp {
 
 const FeatureItem = ({ iconSrc, title, description }: FeatureItemProp): React.JSX.Element => {
   return (
-    <div className={styles.featureItem}>
-      <div className={styles.featureItem_icon}>
+    <div className="flex items-center gap-4">
+      <div className="w-10 h-10 flex-shrink-0">
         <SvgInsert src={iconSrc} width={40} height={40} />
       </div>
-      <div className={styles.featureItem_info}>
-        <p className={styles.featureItem_info_title}>{title}</p>
-        <p className={styles.featureItem_info_description}>{description}</p>
+      <div className="flex flex-col gap-2">
+        <p className="font-poppins font-semibold text-[16px] leading-[1.2] text-gray-900 whitespace-pre-wrap">
+          {title}
+        </p>
+        <p className="font-poppins text-[14px] text-gray-500 leading-normal whitespace-pre-wrap">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -49,9 +52,9 @@ function Featured(): React.ReactElement {
   ];
 
   return (
-    <div className={styles.featured}>
+    <div className="py-[60px]">
       <Container>
-        <div className={styles.featured_wrapper}>
+        <div className="bg-white rounded-[8px] shadow-[0px_8px_40px_0px_rgba(0,38,3,0.08)] flex items-center justify-between py-10 px-10 gap-6">
           {features.map((feature: FeatureItemProp, index: number) => (
             <FeatureItem
               key={index}

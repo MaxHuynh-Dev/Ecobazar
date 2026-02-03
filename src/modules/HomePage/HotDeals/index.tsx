@@ -4,7 +4,6 @@ import { Container } from '@/components/Container';
 import ProductCard from '@/components/ProductCard';
 import SvgInsert from '@/components/SvgInsert';
 import Text from '@/components/Typo';
-import styles from './hotDeals.module.scss';
 
 function HotDeals(): React.ReactElement {
   const products = [
@@ -87,20 +86,20 @@ function HotDeals(): React.ReactElement {
   ];
 
   return (
-    <div className={styles.hotDeals}>
+    <div className="py-[60px]">
       <Container>
-        <div className={styles.hotDeals_header}>
+        <div className="flex items-center justify-between mb-10 gap-4 flex-wrap">
           <Text Comp="h2" size={32} weight="semibold" color="gray9">
             Popular Products
           </Text>
-          <button className={styles.hotDeals_header_viewAll}>
+          <button className="flex items-center gap-2 bg-transparent border-none cursor-pointer group">
             <Text Comp="span" size={16} weight="medium" color="primary">
               View All
             </Text>
             <SvgInsert src="/icons/arrow-right-green.svg" width={15} height={13} />
           </button>
         </div>
-        <div className={styles.hotDeals_grid}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))}

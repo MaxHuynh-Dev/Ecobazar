@@ -4,7 +4,6 @@ import { Container } from '@/components/Container';
 import ImagePlaceHolder from '@/components/ImagePlaceHolder';
 import SvgInsert from '@/components/SvgInsert';
 import Text from '@/components/Typo';
-import styles from './instagramFeed.module.scss';
 
 function InstagramFeed(): React.ReactElement {
   const posts = [
@@ -41,33 +40,26 @@ function InstagramFeed(): React.ReactElement {
   ];
 
   return (
-    <div className={styles.instagramFeed}>
+    <div className="py-[60px]">
       <Container>
-        <Text
-          Comp="h2"
-          size={32}
-          weight="semibold"
-          color="gray9"
-          className={styles.instagramFeed_title}
-        >
+        <Text Comp="h2" size={32} weight="semibold" color="gray9" className="mb-10 text-center">
           Follow us on Instagram
         </Text>
-        <div className={styles.instagramFeed_grid}>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
           {posts.map((post) => (
             <div
               key={post.id}
-              className={`${styles.instagramFeed_post} ${
-                post.isHighlighted ? styles.instagramFeed_post__highlighted : ''
-              }`}
+              className={`relative rounded-lg overflow-hidden transition-shadow duration-300 border border-gray-100 bg-white ${post.isHighlighted ? 'shadow-lg border-primary scale-105 z-10' : 'hover:shadow-md hover:border-primary'}`}
             >
               <ImagePlaceHolder
                 src={post.image}
                 alt={`Instagram post ${post.id.toString()}`}
                 width={200}
                 height={200}
+                className="w-full h-full object-cover"
               />
               {post.isHighlighted && (
-                <div className={styles.instagramFeed_post_overlay}>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
                   <SvgInsert src="/icons/instagram-large.svg" width={32} height={32} />
                 </div>
               )}

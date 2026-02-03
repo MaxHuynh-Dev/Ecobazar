@@ -1,7 +1,6 @@
 import { Container } from '@/components/Container';
 import ImagePlaceHolder from '@/components/ImagePlaceHolder';
 import React from 'react';
-import styles from './companyLogos.module.scss';
 
 function CompanyLogos(): React.ReactElement {
   const logos = [
@@ -38,15 +37,15 @@ function CompanyLogos(): React.ReactElement {
   ];
 
   return (
-    <div className={styles.companyLogos}>
+    <div className="py-[60px]">
       <Container>
-        <div className={styles.companyLogos_wrapper}>
+        <div className="flex items-center justify-between gap-6">
           {logos.map((logo, index) => (
             <React.Fragment key={logo.id.toString()}>
-              <div className={styles.companyLogos_item}>
+              <div className="flex flex-1 items-center justify-center opacity-70 transition-opacity duration-300 ease-in-out hover:opacity-100">
                 <ImagePlaceHolder src={logo.image} alt={logo.name} width={120} height={50} />
               </div>
-              {index < logos.length - 1 && <div className={styles.companyLogos_divider} />}
+              {index < logos.length - 1 && <div className="w-px h-8 bg-gray-200" />}
             </React.Fragment>
           ))}
         </div>

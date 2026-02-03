@@ -4,10 +4,8 @@ import { Container } from '@/components/Container';
 import ImagePlaceHolder from '@/components/ImagePlaceHolder';
 import SvgInsert from '@/components/SvgInsert';
 import Text from '@/components/Typo';
-import classNames from 'classnames';
 import type React from 'react';
 import { useEffect, useState } from 'react';
-import styles from './promoBanners.module.scss';
 
 interface CountdownTimerProp {
   endDate: Date;
@@ -26,6 +24,12 @@ interface BannerProp {
   price?: string;
   discount?: string;
 }
+
+const bgColors: Record<string, string> = {
+  blue: 'bg-gradient-to-br from-[#12acec] to-[#50e6b1]',
+  black: 'bg-gradient-to-br from-gray-900 to-gray-800',
+  yellow: 'bg-gradient-to-br from-yellow-300 to-yellow-500',
+};
 
 const CountdownTimer = ({ endDate }: CountdownTimerProp): React.JSX.Element => {
   const [timeLeft, setTimeLeft] = useState({
@@ -59,69 +63,89 @@ const CountdownTimer = ({ endDate }: CountdownTimerProp): React.JSX.Element => {
   const formatNumber = (num: number): string => num.toString().padStart(2, '0');
 
   return (
-    <div className={styles.countdown}>
-      <div className={styles.countdown_item}>
+    <div className="flex items-center gap-2 mt-5 mb-3">
+      <div className="flex flex-col items-center">
         <Text
           Comp="p"
           size={24}
           weight="normal"
           color="white"
-          className={styles.countdown_item_value}
+          className="text-2xl font-normal text-white bg-white/10 rounded-md px-4 py-[6px] mb-1"
         >
           {formatNumber(timeLeft.days)}
         </Text>
-        <Text Comp="p" size={12} weight="normal" className={styles.countdown_item_label}>
+        <Text
+          Comp="p"
+          size={12}
+          weight="normal"
+          className="text-xs font-normal text-white tracking-wider"
+        >
           DAYS
         </Text>
       </div>
-      <Text Comp="span" size={24} weight="normal" className={styles.countdown_separator}>
+      <Text Comp="span" size={24} weight="normal" className="text-2xl text-white mx-1">
         :
       </Text>
-      <div className={styles.countdown_item}>
+      <div className="flex flex-col items-center">
         <Text
           Comp="p"
           size={24}
           weight="normal"
           color="white"
-          className={styles.countdown_item_value}
+          className="text-2xl font-normal text-white bg-white/10 rounded-md px-4 py-[6px] mb-1"
         >
           {formatNumber(timeLeft.hours)}
         </Text>
-        <Text Comp="p" size={12} weight="normal" className={styles.countdown_item_label}>
+        <Text
+          Comp="p"
+          size={12}
+          weight="normal"
+          className="text-xs font-normal text-white tracking-wider"
+        >
           HOURS
         </Text>
       </div>
-      <Text Comp="span" size={24} weight="normal" className={styles.countdown_separator}>
+      <Text Comp="span" size={24} weight="normal" className="text-2xl text-white mx-1">
         :
       </Text>
-      <div className={styles.countdown_item}>
+      <div className="flex flex-col items-center">
         <Text
           Comp="p"
           size={24}
           weight="normal"
           color="white"
-          className={styles.countdown_item_value}
+          className="text-2xl font-normal text-white bg-white/10 rounded-md px-4 py-[6px] mb-1"
         >
           {formatNumber(timeLeft.minutes)}
         </Text>
-        <Text Comp="p" size={12} weight="normal" className={styles.countdown_item_label}>
+        <Text
+          Comp="p"
+          size={12}
+          weight="normal"
+          className="text-xs font-normal text-white tracking-wider"
+        >
           MINS
         </Text>
       </div>
-      <Text Comp="span" size={24} weight="normal" className={styles.countdown_separator}>
+      <Text Comp="span" size={24} weight="normal" className="text-2xl text-white mx-1">
         :
       </Text>
-      <div className={styles.countdown_item}>
+      <div className="flex flex-col items-center">
         <Text
           Comp="p"
           size={24}
           weight="normal"
           color="white"
-          className={styles.countdown_item_value}
+          className="text-2xl font-normal text-white bg-white/10 rounded-md px-4 py-[6px] mb-1"
         >
           {formatNumber(timeLeft.seconds)}
         </Text>
-        <Text Comp="p" size={12} weight="normal" className={styles.countdown_item_label}>
+        <Text
+          Comp="p"
+          size={12}
+          weight="normal"
+          className="text-xs font-normal text-white tracking-wider"
+        >
           SECS
         </Text>
       </div>
@@ -135,18 +159,26 @@ interface BannerCardProp {
 
 const BannerCard = ({ banner }: BannerCardProp): React.JSX.Element => {
   return (
-    <div className={classNames(styles.banner, styles[`banner__${banner.bgColor}`])}>
-      <div className={styles.banner_bg}>
-        <ImagePlaceHolder src={banner.bgImage} alt={banner.title} width={424} height={536} />
+    <div
+      className={`relative rounded-[12px] overflow-hidden shadow-lg flex flex-col min-h-[420px] h-full ${bgColors[banner.bgColor] || ''}`}
+    >
+      <div className="absolute left-0 top-0 w-full h-full z-0">
+        <ImagePlaceHolder
+          src={banner.bgImage}
+          alt={banner.title}
+          width={424}
+          height={536}
+          className="object-cover w-full h-full opacity-50"
+        />
       </div>
-      <div className={styles.banner_content}>
+      <div className="relative flex flex-col z-10 p-8 h-full">
         {banner.subtitle && (
           <Text
             Comp="p"
             size={14}
             weight="medium"
             color="white"
-            className={styles.banner_content_subtitle}
+            className="uppercase tracking-wider mb-2 text-white"
           >
             {banner.subtitle}
           </Text>
@@ -156,7 +188,7 @@ const BannerCard = ({ banner }: BannerCardProp): React.JSX.Element => {
           size={40}
           weight="semibold"
           color="white"
-          className={styles.banner_content_title}
+          className="font-semibold text-white text-[40px] leading-tight mb-4"
         >
           {banner.title}
         </Text>
@@ -164,36 +196,36 @@ const BannerCard = ({ banner }: BannerCardProp): React.JSX.Element => {
           <CountdownTimer endDate={banner.endDate} />
         )}
         {banner.type === 'price' && banner.price && (
-          <div className={styles.banner_content_price}>
-            <Text Comp="span" size={18} weight="normal" color="white">
+          <div className="flex gap-3 items-end mt-4">
+            <Text Comp="span" size={18} weight="normal" color="white" className="text-white">
               Started at
             </Text>
             <Text
               Comp="span"
               size={18}
               weight="semibold"
-              className={styles.banner_content_price_value}
+              className="text-white font-semibold text-lg bg-black/30 px-3 py-1 rounded"
             >
               {banner.price}
             </Text>
           </div>
         )}
         {banner.type === 'discount' && banner.discount && (
-          <div className={styles.banner_content_discount}>
-            <Text Comp="span" size={18} weight="normal" color="white">
+          <div className="flex gap-3 items-end mt-4">
+            <Text Comp="span" size={18} weight="normal" color="white" className="text-white">
               Up to
             </Text>
             <Text
               Comp="span"
               size={18}
               weight="semibold"
-              className={styles.banner_content_discount_badge}
+              className="text-yellow-800 font-semibold text-lg bg-yellow-300 px-3 py-1 rounded"
             >
               {banner.discount}
             </Text>
           </div>
         )}
-        <button className={styles.banner_content_btn}>
+        <button className="mt-auto flex items-center gap-2 bg-white px-6 py-2 rounded-lg shadow-md border-none outline-none focus:ring-2 ring-primary cursor-pointer">
           <Text Comp="span" size={14} weight="semibold" color="primary">
             {banner.ctaText}
           </Text>
@@ -239,9 +271,9 @@ function PromoBanners(): React.ReactElement {
   ];
 
   return (
-    <div className={styles.promoBanners}>
+    <div className="py-[60px]">
       <Container>
-        <div className={styles.promoBanners_grid}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {banners.map((banner: BannerProp) => (
             <BannerCard key={banner.id} banner={banner} />
           ))}

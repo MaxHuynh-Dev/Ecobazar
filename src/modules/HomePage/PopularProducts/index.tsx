@@ -5,7 +5,6 @@ import FeaturedProductCard from '@/components/FeaturedProductCard';
 import ProductCard from '@/components/ProductCard';
 import SvgInsert from '@/components/SvgInsert';
 import Text from '@/components/Typo';
-import styles from './popularProducts.module.scss';
 
 const FEATURED_PRODUCT_END_DATE = new Date(Date.now() + 2 * 24 * 60 * 60 * 1000);
 
@@ -103,27 +102,29 @@ function PopularProducts(): React.ReactElement {
   ];
 
   return (
-    <div className={styles.popularProducts}>
+    <div className="py-[60px] bg-white">
       <Container>
-        <div className={styles.popularProducts_header}>
+        <div className="flex items-center justify-between mb-10 gap-4 flex-wrap">
           <Text Comp="h2" size={32} weight="semibold" color="gray9">
             Hot Deals
           </Text>
-          <button className={styles.popularProducts_header_viewAll}>
+          <button className="flex items-center gap-2 bg-transparent border-none cursor-pointer group">
             <Text Comp="span" size={16} weight="medium" color="primary">
               View All
             </Text>
             <SvgInsert src="/icons/arrow-right-green.svg" width={15} height={13} />
           </button>
         </div>
-        <div className={styles.popularProducts_grid}>
-          <div className={styles.popularProducts_featured}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-10">
+          <div className="md:col-span-1">
             <FeaturedProductCard {...featuredProduct} />
           </div>
-          <div className={styles.popularProducts_list}>
-            {products.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
+          <div className="md:col-span-2">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {products.map((product) => (
+                <ProductCard key={product.id} {...product} />
+              ))}
+            </div>
           </div>
         </div>
       </Container>
